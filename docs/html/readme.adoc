@@ -1,0 +1,11 @@
+
+= docs html
+
+[source,shell script]
+----
+url=https://docs.spring.io/spring-boot/docs/2.3.2.RELEASE/reference/htmlsingle/
+
+url=https://docs.spring.io/spring-boot/docs/2.3.2.RELEASE/gradle-plugin/reference/html/
+
+wget -c -r -p -np -k -E $url
+----
