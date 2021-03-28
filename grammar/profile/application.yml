@@ -1,0 +1,11 @@
+
+spring:
+  profiles:
+
+#    当前激活配置
+#    application-app.yml
+    active: dev
+
+#    包括其他哪些配置
+#    application-base.yml
+    include: base

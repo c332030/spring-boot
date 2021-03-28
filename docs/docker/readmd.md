@@ -1,0 +1,48 @@
+
+# docker 启动 springboot
+
+```shell script
+
+echo name: $name
+echo port: $port
+
+if [ ! $name ] || [ ! $port ] ; then
+  exit
+fi
+
+image=adoptopenjdk/openjdk8
+tag=latest
+
+docker pull $image:$tag
+
+docker stop $name
+docker rm $name
+
+program_home=/home/program
+
+docker run -d \
+  \
+  --privileged=true \
+  --restart unless-stopped \
+  --log-opt max-size=10m \
+  --log-opt max-file=3 \
+  \
+  -v /etc/localtime:/etc/localtime \
+  \
+  -v $program_home\$name:/springboot \
+  \
+  -w $app_home \
+  \
+  -p $port:8080 \
+  \
+  --name $name \
+  \
+  $image:$tag \
+  \
+  java -jar -Xms128m -Xmx512m \
+  -Djava.net.preferipv4stack=true \
+  -Duser.timezone=gmt+08 \
+  /springboot/$name.jar
+
+
+```
