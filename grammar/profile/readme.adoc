@@ -1,32 +1,36 @@
 
-# spring 环境配置
+= spring 环境配置
 
 application-{profile}.yml
 
 @Profile注解可以实现不同环境下配置参数的切换
 
 自定义注解
-```java
+
+[source,java]
+----
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Profile("dev")
 public @interface Dev {
-// ...    
+// ...
 }
-```
+----
 
-```java
+[source,java]
+----
 @Configuration
 @Profile("dev")
 public class DevConfiguration {
     // ...
 }
-```
+----
 
-```java
+[source,java]
+----
 @Configuration
 @Profile("test")
 public class TestConfiguration {
     // ...
 }
-```
+----
