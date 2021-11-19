@@ -1,7 +1,8 @@
 
-# docker 启动 springboot
+= docker 启动 springboot
 
-```shell script
+[source,shell script]
+----
 
 echo name: $name
 echo port: $port
@@ -45,4 +46,4 @@ docker run -d \
   /springboot/$name.jar
 
 
-```
+----
