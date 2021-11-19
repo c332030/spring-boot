@@ -6,6 +6,9 @@
 mkdir target/extracted
 java -Djarmode=layertools -jar target/*.jar extract --destination target/extracted
 docker build -t myorg/myapp .
+
+docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t springio/gs-spring-boot-docker
+
 ----
 
 [source,dockerfile]
