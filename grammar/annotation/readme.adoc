@@ -1,0 +1,72 @@
+
+= annotation 注解
+:toc: right
+
+== @SpringBootApplication
+
+由以下三个注解组成
+
+=== @EnableAutoConfiguration
+
+启用 SpringBoot 的自动配置机制
+
+=== @ComponentScan
+
+扫描被@Component (@Service,@Controller)注解的 bean，注解默认会扫描该类所在的包下所有的类。
+
+=== @Configuration
+
+允许在 Spring 上下文中注册额外的 bean 或导入其他配置类
+
+== @Autowired / @Resource
+
+注入 bean
+
+== 实例化
+
+=== @Component
+=== @Repository
+=== @Service
+=== @Controller
+=== @RestController
+
+@Controller + @ResponseBody
+
+== @Scope bean 作用域
+
+. singleton
+
+    唯一 bean 实例，Spring 中的 bean 默认都是单例的。
+
+. prototype
+
+    每次请求都会创建一个新的 bean 实例。
+
+. request
+
+    每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。
+
+. session
+
+    每一个 HTTP Session 会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效
+
+== @Configuration
+
+声明配置类
+
+== 请求参数、返回结果
+
+=== @PathVariable
+
+=== @RequestParam
+=== @RequestBody
+=== @ResponseBody
+
+== 读取配置
+
+=== @Value
+=== @ConfigurationProperties
+
+== @Transactional
+
+事务
