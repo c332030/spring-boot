@@ -4,5 +4,5 @@
 == 流程
 
 . 创建 applicationContext
-. 刷新 applicationContext，查找 jar 下面的 spring.factories
+. 刷新 applicationContext 时，查找 classpath 下 jar 中的 `META-INF/spring.factories`
 . 扫描 @Configuration，根据 @ConditionOn 条件，判断将哪些类加载到容器
