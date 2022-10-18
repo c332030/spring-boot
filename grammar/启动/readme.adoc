@@ -3,6 +3,17 @@
 
 == 流程
 
+run 流程
+
+. 创建 SpringApplication 并初始化
+. 执行 run
+.. 创建计时器
+
+自动装配
+
 . 创建 applicationContext
+.. ApplicationContext
+.. ServletApplicationContext
+.. ReactiveApplicationContext
 . 刷新 applicationContext 时，查找 classpath 下 jar 中的 `META-INF/spring.factories`
 . 扫描 @Configuration，根据 @ConditionOn 条件，判断将哪些类加载到容器
