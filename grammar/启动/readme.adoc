@@ -8,6 +8,7 @@ run 流程
 . 创建 SpringApplication 并初始化
 . 执行 run
 .. 创建计时器
+. 注册 ShutdownHook
 
 自动装配
 
