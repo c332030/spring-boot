@@ -5,10 +5,18 @@
 
 run 流程
 
+applicationContext = 应用程序上下文
+
 . 创建 SpringApplication 并初始化
 . 执行 run
 .. 创建计时器
-. 注册 ShutdownHook
+.. 从 META-INF/spring.factories 中获取 listener，创建并启动
+.. 构建上下文环境，看是创建看构建的是 SERVLET、REACTIVE、还是普通环境 ApplicationEnvironment
+.. 初始化 applicationContext
+.. 刷新 applicationContext 前的准备阶段
+.. 刷新 applicationContext
+... 注册了关闭 applicationContext 的钩子，ShutdownHook
+.. 刷新 applicationContext 后的扩展接口，afterRefresh 这个是一个空实现的方法
 
 自动装配
 
